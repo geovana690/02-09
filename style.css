@@ -1,0 +1,214 @@
+let cena = 0;
+
+function setup() {
+  createCanvas(800, 500);
+  textAlign(CENTER, CENTER);
+  textFont("Arial");
+}
+
+function draw() {
+  if (cena === 0) {
+    inicio();
+  }
+
+  if (cena === 1) {
+    usoExcessivo();
+  }
+
+  if (cena === 2) {
+    dependencia();
+  }
+
+  if (cena === 3) {
+    perdaAutonomia();
+  }
+
+  if (cena === 4) {
+    finalRuim();
+  }
+
+  fill(255);
+  textSize(16);
+  text("Clique para continuar", width / 2, 470);
+}
+
+// CENA 1
+function inicio() {
+  background(30, 40, 70);
+
+  // Pessoa
+  fill(100, 180, 255);
+  ellipse(280, 220, 80, 80);
+
+  fill(60, 130, 220);
+  rect(240, 270, 80, 110, 20);
+
+  // IA
+  fill(50);
+  rect(500, 170, 150, 100, 15);
+
+  fill(0, 220, 255);
+  ellipse(575, 220, 50, 50);
+
+  fill(255);
+  textSize(30);
+  text("O começo", 400, 60);
+
+  textSize(18);
+  text(
+    "Marina começa a usar IA para facilitar sua rotina.",
+    400,
+    420
+  );
+}
+
+// CENA 2
+function usoExcessivo() {
+  background(25, 25, 35);
+
+  // IA crescendo
+  fill(30, 60, 80);
+  ellipse(580, 240, 280, 280);
+
+  fill(0, 220, 255);
+  ellipse(580, 240, 100, 100);
+
+  // Pessoa
+  fill(100, 140, 220);
+  ellipse(200, 250, 50, 50);
+
+  fill(70, 100, 180);
+  rect(175, 280, 50, 80, 10);
+
+  fill(255);
+  textSize(28);
+  text("Uso excessivo", 400, 50);
+
+  textSize(18);
+  text(
+    "A IA começa a escrever, responder e decidir por Marina.",
+    400,
+    420
+  );
+}
+
+// CENA 3
+function dependencia() {
+  background(15, 15, 25);
+
+  // IA grande
+  fill(20, 60, 80);
+  ellipse(400, 230, 300, 300);
+
+  fill(0, 230, 255);
+  ellipse(400, 230, 120, 120);
+
+  // Pessoa presa
+  fill(100, 100, 130);
+  ellipse(400, 390, 40, 40);
+
+  fill(70, 70, 100);
+  rect(380, 420, 40, 50);
+
+  // Correntes
+  stroke(255, 70, 70);
+  strokeWeight(5);
+
+  line(380, 400, 300, 300);
+  line(420, 400, 500, 300);
+
+  noStroke();
+
+  fill(255);
+  textSize(28);
+  text("Dependência", 400, 55);
+
+  textSize(18);
+  text(
+    "Marina já não consegue fazer as coisas sem a IA.",
+    400,
+    420
+  );
+}
+
+// CENA 4
+function perdaAutonomia() {
+  background(10, 10, 15);
+
+  // IA domina a tela
+  fill(20, 70, 90);
+  ellipse(400, 210, 370, 370);
+
+  fill(0, 230, 255);
+  ellipse(400, 210, 130, 130);
+
+  // Pessoa pequena
+  fill(60);
+  ellipse(400, 410, 25, 25);
+  rect(390, 435, 20, 35);
+
+  fill(255);
+  textSize(28);
+  text("Perda de autonomia", 400, 50);
+
+  textSize(18);
+  text(
+    "A tecnologia ficou maior enquanto Marina ficou cada vez menor.",
+    400,
+    420
+  );
+}
+
+// CENA 5
+function finalRuim() {
+  background(5, 5, 10);
+
+  // IA ocupando quase toda a tela
+  fill(15, 70, 90);
+  ellipse(400, 230, 440, 440);
+
+  fill(0, 230, 255);
+  ellipse(400, 230, 160, 160);
+
+  // Pessoa quase desaparecida
+  fill(30);
+  ellipse(400, 425, 20, 20);
+  rect(393, 440, 14, 30);
+
+  fill(255, 70, 70);
+  textSize(32);
+  text("FINAL RUIM", 400, 50);
+
+  fill(255);
+  textSize(18);
+
+  text(
+    "Marina deixou de usar a IA como ferramenta.",
+    400,
+    380
+  );
+
+  text(
+    "Agora ela depende da tecnologia para pensar e decidir.",
+    400,
+    410
+  );
+
+  fill(180);
+  textSize(16);
+
+  text(
+    "A tecnologia substituiu parte da autonomia de Marina.",
+    400,
+    445
+  );
+}
+
+// Passar para a próxima cena
+function mousePressed() {
+  cena++;
+
+  if (cena > 4) {
+    cena = 0;
+  }
+}
